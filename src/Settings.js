@@ -1,10 +1,11 @@
 import { __ } from "@wordpress/i18n";
 import { InspectorControls } from "@wordpress/block-editor";
 import { solidStar, outlineStar } from './utils/icons';
-// import produce from "immer";
-import { PanelBody, TabPanel, TextControl, SelectControl, RangeControl } from "@wordpress/components";
+import produce from "immer";
+import { PanelBody, TabPanel, TextControl, SelectControl, RangeControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
 
-import { BtnGroup, ColorControl } from "../../Components"
+import { BColor, BtnGroup, MultiShadowControl, Typography } from "../../Components"
+import { emUnit, pxUnit } from "../../Components/utils/options";
 
 const iconOptions = [
 	{ label: __('Solid', 'rating'), value: 'solid', icon: solidStar },
@@ -18,7 +19,7 @@ const iconAlignments = [
 
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { ratingScale, rating, iconStyle, prefix, alignment } = attributes;
+	const { ratingScale, rating, iconStyle, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
 
 	return <InspectorControls>
 		<TabPanel
@@ -67,12 +68,7 @@ const Settings = ({ attributes, setAttributes }) => {
 							onChange={val => setAttributes({ iconStyle: val })}
 							options={iconOptions} isIcon={true} />
 
-						<BtnGroup
-							className="mt20"
-							label={__("Alignment", "star-rating")}
-							value={alignment}
-							onChange={val => setAttributes({ alignment: val })}
-							options={iconAlignments} isIcon={true} />
+
 					</PanelBody>
 				)}
 
@@ -81,6 +77,27 @@ const Settings = ({ attributes, setAttributes }) => {
 						className="bPlPanelBody"
 						title={__("Title", "star-rating")}
 					>
+						<UnitControl
+							label={__("Gap", "star-rating")}
+							labelPosition="left"
+							value={gap}
+							onChange={(val) => setAttributes({ gap: val })}
+							units={[pxUnit(10), emUnit(1)]}
+							isResetValueOnUnitChange={true}
+						/>
+
+						<BtnGroup
+							className="mt20"
+							label={__("Alignment", "star-rating")}
+							value={alignment}
+							onChange={val => setAttributes({ alignment: val })}
+							options={iconAlignments} isIcon={true} />
+
+						<BColor label={__('Text Color', 'star-rating')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#0000' />
+
+						<Typography label={__('Text Typography', 'star-rating')} value={textTypo} onChange={val => setAttributes({ textTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
+
+						<MultiShadowControl label={__('Text Shadow', 'star-rating')} value={textShadow} onChange={val => setAttributes({ textShadow: val })} type="text" produce={produce} />
 
 
 

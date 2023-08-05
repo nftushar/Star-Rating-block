@@ -32,27 +32,27 @@
       "type": "string",
       "default": ""
     },
+    "gap": {
+      "type": "string",
+      "default": "10px"
+    },
     "alignment": {
       "type": "string",
       "default": "center"
     },
-    "textColor": {
-      "type": "string",
-      "default": "#7a7a7a"
-    },
-    "typography": {
+    "textTypo": {
       "type": "object",
       "default": {
         "fontSize": "16px"
       }
     },
+    "textColor": {
+      "type": "string",
+      "default": "#7a7a7a"
+    },
     "textShadow": {
       "type": "array",
       "default": []
-    },
-    "gap": {
-      "type": "string",
-      "default": "10px"
     }
   },
   "supports": {
