@@ -1,7 +1,7 @@
 {
   "apiVersion": "1",
   "name": "b-blocks/star-rating",
-  "title": "star-rating",
+  "title": "Star Rating",
   "description": "Star Rating Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive star-rating  more.",
   "category": "media",
   "keywords": ["star-rating", "starRating", "Gutenberg"],

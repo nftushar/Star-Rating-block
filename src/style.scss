@@ -1,44 +1,49 @@
 $primaryColor: #4527a4;
 
-// Common CSS
-.notice {
-	text-transform: capitalize;
-	height: 350px;
-	width: 100%;
-	font-size: 40px;
-	color: black;
-	display: grid;
-	text-align: center; 
-	align-items: center;
-}
-
 html {
 	scroll-behavior: smooth;
 }
 
-.wp-block-b-blocks-iframe {
+.wp-block-b-blocks-star-rating {
 	* {
 		box-sizing: border-box;
 	}
 
-	.bBlocksIframe {
-		position: relative;
-		overflow: hidden;
-	}
-	&:fullscreen .bBlocksIframe {
-		height: 100% !important;
-	}
+	.bBlocksRating {
+		.stars {
+			display: flex;
+			align-items: center;
 
-	.fullScreenBtn {
-		position: absolute;
-		bottom: 16px;
-		right: 5px;
-		transform: translateX(-50%);
-		padding: 6px 6px 4px 6px;
-		background-color: #d1d4d6;
-		color: #fff;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
+			.star {
+				display: inline-block;
+				position: relative;
+				width: 20px;
+				height: 20px;
+				overflow: hidden;
+
+				> * {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				svg {
+					fill: #ccd6df;
+				}
+
+				.starFill {
+					width: 0px;
+					overflow: hidden;
+
+					svg {
+						width: 20px;
+						height: 100%;
+						fill: #f0ad4e;
+					}
+				}
+			}
+		}
 	}
 }

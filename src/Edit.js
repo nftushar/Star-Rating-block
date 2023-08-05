@@ -1,29 +1,38 @@
-import { useEffect } from "react";
-
+import React, { useEffect } from "react";
 import Settings from "./Settings";
-import Rating from "./Rating";
 import Style from "./Style";
-
+import { solidStar, outlineStar } from "./utils/icons";
+import { getArrFromNum } from "./utils/functions";
 
 const Edit = (props) => {
   const { className, attributes, setAttributes, clientId, isSelected } = props;
-  const{src} = attributes;
+  const { ratingScale, iconStyle } = attributes;
 
   useEffect(() => {
     clientId && setAttributes({ cId: clientId });
-  }, [clientId]);
+  }, [clientId, setAttributes]);
 
-  return <>
-    <Settings attributes={attributes} setAttributes={setAttributes} />
+  return (
+    <>
+      <Settings attributes={attributes} setAttributes={setAttributes} />
 
-    <div className={className} id={`bBlocks-rating-${clientId}`}>
-      {!isSelected && <div className="mouse"></div>}
+      <div className={className} id={`bBlocksRating-${clientId}`}>
+        <Style attributes={attributes} clientId={clientId} />
+        <div className="bBlocksRating">
+          <span className="ratingPrefix"></span>
 
-      <Style attributes={attributes} clientId={clientId} />
-      {src ? <Rating attributes={attributes} clientId={clientId} /> : <div className="notice">
-        Please insert a source to show star-rating.
-        </div>}
-    </div>
-  </>
+          <div className="stars">
+            {getArrFromNum(ratingScale).map((index) => {
+              return <span key={index} className="star">
+                {'solid' === iconStyle ? solidStar : outlineStar}
+                <span className="starFill">{solidStar}</span>
+              </span>
+            })}
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
+
 export default Edit;
