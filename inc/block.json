@@ -1,0 +1,73 @@
+{
+  "apiVersion": "1",
+  "name": "b-blocks/star-rating",
+  "title": "star-rating",
+  "description": "Star Rating Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive star-rating  more.",
+  "category": "media",
+  "keywords": ["star-rating", "starRating", "Gutenberg"],
+  "textdomain": "star-rating",
+
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "cId": {
+      "type": "string",
+      "default": ""
+    },
+    "ratingScale": {
+      "type": "number",
+      "default": 5
+    },
+    "rating": {
+      "type": "number",
+      "default": 5.0
+    },
+    "iconStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "prefix": {
+      "type": "string",
+      "default": ""
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#7a7a7a"
+    },
+    "typography": {
+      "type": "object",
+      "default": {
+        "fontSize": "16px"
+      }
+    },
+    "textShadow": {
+      "type": "array",
+      "default": []
+    },
+    "gap": {
+      "type": "string",
+      "default": "10px"
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "preview": true,
+      "columns": {
+        "desktop": 1,
+        "tablet": 1,
+        "mobile": 1
+      }
+    }
+  },
+  "editorScript": "file:../dist/editor.js"
+}

@@ -1,0 +1,67 @@
+# Copyright (C) 2023 bPlugins LLC
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: star-rating 7 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/star-rating-7\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-07-30T05:40:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: star-rating\n"
+
+#. Plugin Name of the plugin
+msgid "star-rating"
+msgstr ""
+
+#. Description of the plugin
+msgid "star-rating-7 Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive star-rating embedding for videos, live website, and more.."
+msgstr ""
+
+#. Author of the plugin
+msgid "bPlugins LLC"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://bplugins.com"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:851
+#: dist/editor.js:901
+msgid "Manage star-rating"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:854
+msgid "Source"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:859
+msgid "title"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:877
+msgid "Height"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:884
+msgid "Width"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:891
+msgid "Show / Hide Full Screen button"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:904
+msgid "Border:"
+msgstr ""
