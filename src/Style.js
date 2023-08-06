@@ -25,7 +25,7 @@ const Style = ({ attributes, clientId }) => {
             color: ${textColor}; 
           }
 
-          span.ratingPrefix{
+          ${ratingSl} .ratingPrefix{
             text-shadow: ${getMultiShadowCSS(textShadow, 'text')}
           }
 

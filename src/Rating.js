@@ -1,22 +1,21 @@
-import { useState } from 'react';
-// import { solidIcon, outlineIcon } from './utils/icons';
+// import { useState } from 'react';
+import { getArrFromNum } from './utils/functions';
+import { solidStar, outlineStar } from './utils/icons';
 
-const Rating = ({ attributes, clientId }) => {
-    const { src, title, loading } = attributes;
+const Rating = ({ attributes }) => {
+    const { ratingScale, iconStyle, prefix } = attributes;
 
-    const [isNowFull, setIsNowFull] = useState(false);
+    return <div className="bBlocksRating">
+        <span className="ratingPrefix">{prefix}</span>
 
- 
-
-    return <div className='bBlocksIframe'>
-        <rating
-            title={title}
-            width='100%'
-            height='100%'
-            src={src}
-            loading={loading}
-        /> 
- 
+        <div className="stars"> 
+            {getArrFromNum(ratingScale).map((index) => {
+                return <span key={index} className="star">
+                    {'solid' === iconStyle ? solidStar : outlineStar}
+                    <span className="starFill">{solidStar}</span>
+                </span>
+            })}
+        </div>
     </div>
 }
 export default Rating;
