@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import Settings from "./Settings";
 import Style from "./Style";
 import Rating from './Rating';
-// import { solidStar, outlineStar } from "./utils/icons";
-// import { getArrFromNum } from "./utils/functions";
+
 
 const Edit = (props) => {
   const { className, attributes, setAttributes, clientId } = props;
@@ -14,14 +13,13 @@ const Edit = (props) => {
   }, [clientId, setAttributes]);
 
   return <>
-    <Settings attributes={attributes} setAttributes={setAttributes} />+
+    <Settings attributes={attributes} setAttributes={setAttributes} />
 
     <div className={className} id={`bBlocksRating-${clientId}`}>
       <Style attributes={attributes} clientId={clientId} />
 
       <Rating attributes={attributes} />
       </div>
-     
   </>;
 };
 
