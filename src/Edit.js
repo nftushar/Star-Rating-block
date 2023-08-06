@@ -6,7 +6,7 @@ import { getArrFromNum } from "./utils/functions";
 
 const Edit = (props) => {
   const { className, attributes, setAttributes, clientId, isSelected } = props;
-  const { ratingScale, iconStyle } = attributes;
+  const { ratingScale, iconStyle, prefix  } = attributes;
 
   useEffect(() => {
     clientId && setAttributes({ cId: clientId });
@@ -19,7 +19,7 @@ const Edit = (props) => {
       <div className={className} id={`bBlocksRating-${clientId}`}>
         <Style attributes={attributes} clientId={clientId} />
         <div className="bBlocksRating">
-          <span className="ratingPrefix"></span>
+          <span className="ratingPrefix">{prefix}</span>
 
           <div className="stars">
             {getArrFromNum(ratingScale).map((index) => {

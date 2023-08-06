@@ -20,7 +20,7 @@ const iconAlignments = [
 
 const Settings = ({ attributes, setAttributes }) => {
 	const { ratingScale, rating, iconStyle, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
-console.log(ratingScale);
+
 	return <InspectorControls>
 		<TabPanel
 			className="bPlTabPanel"
@@ -43,7 +43,7 @@ console.log(ratingScale);
 								{ label: '0-5', value: 5 },
 								{ label: '0-10', value: 10 },
 							]}
-							onChange={(val) => setAttributes({ ratingScale: parseInt(val)  })}
+							onChange={(val) => setAttributes({ ratingScale: parseInt(val) })}
 						/>
 
 						<TextControl
