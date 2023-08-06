@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { getArrFromNum } from './utils/functions';
 import { solidStar, outlineStar } from './utils/icons';
 
