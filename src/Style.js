@@ -1,18 +1,34 @@
-import { getBorderCSS, getMultiShadowCSS } from "../../Components/utils/getCSS";
+import { getMultiShadowCSS, getTypoCSS } from "../../Components/utils/getCSS";
 import { getArrFromNum } from "./utils/functions";
 
 const Style = ({ attributes, clientId }) => {
     const { rating, gap, alignment, textTypo, textColor, textShadow } = attributes;
 
     const ratingSl = `#bBlocksRating-${clientId} .bBlocksRating`;
+
     const starSl = `${ratingSl} .stars .star`;
 
     const intAndDec = (rating + '').split('.');
     const ratingInt = parseInt(intAndDec[0]);
     const ratingDec = parseInt(intAndDec[1] || 0);
 
+    // #tcbTabbedContent-${clientId} .tabMenu {
+
     return <style dangerouslySetInnerHTML={{
         __html: `
+        ${getTypoCSS(``, textTypo)?.googleFontLink}
+        ${getTypoCSS(`${ratingSl} .ratingPrefix`, textTypo)?.styles}
+
+          ${ratingSl} {
+            justify-content: ${alignment};
+            gap: ${gap};
+            color: ${textColor}; 
+          }
+
+          span.ratingPrefix{
+            text-shadow: ${getMultiShadowCSS(textShadow, 'text')}
+          }
+
         ${getArrFromNum(ratingInt).map((index) => `${starSl}:nth-child(${index}) .starFill`).join(', ')}{
             width: 100%;
         }

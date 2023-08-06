@@ -38,7 +38,7 @@
     },
     "alignment": {
       "type": "string",
-      "default": "center"
+      "default": "right"
     },
     "textTypo": {
       "type": "object",
