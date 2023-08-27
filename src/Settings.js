@@ -70,8 +70,6 @@ const Settings = ({ attributes, setAttributes }) => {
 							value={iconStyle}
 							onChange={val => setAttributes({ iconStyle: val })}
 							options={iconOptions} isIcon={true} />
-
-
 					</PanelBody>
 				)}
 
