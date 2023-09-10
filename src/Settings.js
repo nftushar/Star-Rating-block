@@ -100,8 +100,6 @@ const Settings = ({ attributes, setAttributes }) => {
 
 						<MultiShadowControl label={__('Text Shadow', 'star-rating')} value={textShadow} onChange={val => setAttributes({ textShadow: val })} type="text" produce={produce} />
 
-
-
 					</PanelBody>
 				)}
 			</>}
