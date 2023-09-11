@@ -2,8 +2,8 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Star Rating 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/star-rating\n"
+"Project-Id-Version: Product Review 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-review\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,14 +12,14 @@ msgstr ""
 "POT-Creation-Date: 2023-08-07T04:57:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
-"X-Domain: star-rating\n"
+"X-Domain: product-review\n"
 
 #. Plugin Name of the plugin
-msgid "Star Rating"
+msgid "Product Review"
 msgstr ""
 
 #. Description of the plugin
-msgid "starRating Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive starRating  and more.."
+msgid "productReview Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive productReview  and more.."
 msgstr ""
 
 #. Author of the plugin
@@ -39,7 +39,7 @@ msgid "Prefix"
 msgstr ""
 
 #: dist/editor.js:1
-msgid "Rating"
+msgid "review"
 msgstr ""
 
 #: dist/editor.js:1
@@ -72,22 +72,22 @@ msgstr ""
 
 #: inc/block.json
 msgctxt "block title"
-msgid "Star Rating"
+msgid "Product Review"
 msgstr ""
 
 #: inc/block.json
 msgctxt "block description"
-msgid "Gutenberg editing with easy-to-use, responsive star-rating  more."
+msgid "Gutenberg editing with easy-to-use, responsive product-review  more."
 msgstr ""
 
 #: inc/block.json
 msgctxt "block keyword"
-msgid "star-rating"
+msgid "product-review"
 msgstr ""
 
 #: inc/block.json
 msgctxt "block keyword"
-msgid "Rating"
+msgid "Review"
 msgstr ""
 
 #: inc/block.json

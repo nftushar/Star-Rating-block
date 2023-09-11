@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Star Rating
- * Description: starRating Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive starRating  and more..
+ * Plugin Name:Product Review Block
+ * Description: productReviewBlock Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive productReviewBlock  and more..
  * Version: 1.0.0
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain: star-rating
+ * Text Domain: product-review
  */
 // ABS PATH
 if ( !defined( 'ABSPATH' ) ) { exit; }

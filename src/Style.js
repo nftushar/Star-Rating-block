@@ -4,7 +4,7 @@ import { getArrFromNum } from "./utils/functions";
 const Style = ({ attributes, clientId }) => {
     const { rating, gap, alignment, textTypo, textColor, textShadow } = attributes;
 
-    const ratingSl = `#bBlocksRating-${clientId} .bBlocksRating`;
+    const ratingSl = `#bBlocksProductReview-${clientId} .bBlocksProductReview`;
     const starSl = `${ratingSl} .stars .star`;
     const intAndDec = (rating + '').split('.');
     const ratingInt = parseInt(intAndDec[0]);

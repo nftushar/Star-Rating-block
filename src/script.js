@@ -1,22 +1,25 @@
-import { render } from 'react-dom';
-
+import { render } from "react-dom";
 import "./style.scss";
 import Style from "./Style";
-import Rating from './Rating';
-
+import ProductReview from "./Components/ProductReview";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const iframeEls = document.querySelectorAll(".wp-block-b-blocks-star-rating");
-    iframeEls.forEach((iframeEl) => {
-        const attributes = JSON.parse(iframeEl.dataset.attributes);
-        const { cId } = attributes;
+  const ratingEls = document.querySelectorAll(
+    ".wp-block-b-blocks-product-review"
+  );
+  ratingEls.forEach((ratingEl) => {
+    const attributes = JSON.parse(ratingEl.dataset.attributes);
+    const { cId } = attributes;
 
-        render(<>
-            <Style attributes={attributes} clientId={cId} />
-            <Rating attributes={attributes} />
-        </>, iframeEl);
+    render(
+      <>
+        <h1>HEllo</h1>
+        <Style attributes={attributes} clientId={cId} />
+        <ProductReview attributes={attributes} />
+      </>,
+      ratingEl
+    );
 
-        iframeEl?.removeAttribute("data-attributes");
-    });
+    ratingEl?.removeAttribute("data-attributes");
+  });
 });
-

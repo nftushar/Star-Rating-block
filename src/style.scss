@@ -4,16 +4,45 @@ html {
 	scroll-behavior: smooth;
 }
 
-.wp-block-b-blocks-star-rating {
+.wp-block-b-blocks-product-review {
 	* {
 		box-sizing: border-box;
 	}
 
-	.bBlocksRating {
+	.main {
+		background-color: oldlace;
+		padding: 3em;
+		.header-rating {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			margin-top: 20px;
+			.span {
+				font-size: 28px;
+			}
+		}
+		.review-body {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+		.review-footer-button span {
+			background: #ED6F57;
+			color: #fff;
+			padding: 12px 50px;
+			margin: 20px 20px 0 0;
+			cursor: pointer;
+			text-align: center;
+			font-size: black;
+			text-decoration: none;
+		}
+	}
+
+	.bBlocksProductReview {
 		display: flex;
-		// align-items: center;
-		// justify-content: right;
-		// gap: 10px;
 		.stars {
 			display: flex;
 			align-items: center;
@@ -35,6 +64,7 @@ html {
 
 				svg {
 					fill: #ccd6df;
+					vertical-align: initial;
 				}
 
 				.starFill {
@@ -44,7 +74,7 @@ html {
 					svg {
 						width: 20px;
 						height: 100%;
-						fill: #f0ad4e;
+						fill: #ffbb38;
 					}
 				}
 			}

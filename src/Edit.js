@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Settings from "./Settings";
 import Style from "./Style";
-import Rating from './Rating';
+// import Rating from './Components/Rating';
+import ProductReview from "./Components/ProductReview";
 
 
 const Edit = (props) => {
@@ -15,11 +16,11 @@ const Edit = (props) => {
   return <>
     <Settings attributes={attributes} setAttributes={setAttributes} />
 
-    <div className={className} id={`bBlocksRating-${clientId}`}>
+    <div className={className} id={`bBlocksProductReview-${clientId}`}>
       <Style attributes={attributes} clientId={clientId} />
-
-      <Rating attributes={attributes} />
-      </div>
+      {/* <Rating attributes={attributes} /> */}
+      <ProductReview attributes={attributes}/>
+    </div>
   </>;
 };
 

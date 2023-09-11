@@ -1,11 +1,11 @@
 {
   "apiVersion": "1",
-  "name": "b-blocks/star-rating",
-  "title": "Star Rating",
-  "description": "Gutenberg editing with easy-to-use, responsive star-rating  more.",
+  "name": "b-blocks/product-review",
+  "title": "Product Review Block",
+  "description": "Gutenberg editing with easy-to-use, responsive product-review  more.",
   "category": "media",
-  "keywords": ["star-rating", "Rating", "Gutenberg"],
-  "textdomain": "star-rating",
+  "keywords": ["product-review", "review", "Gutenberg"],
+  "textdomain": "product-review",
 
   "attributes": {
     "align": {
@@ -16,6 +16,12 @@
       "type": "string",
       "default": ""
     },
+
+
+
+
+
+
     "ratingScale": {
       "type": "number",
       "default": 5
