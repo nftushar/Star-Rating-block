@@ -42,33 +42,77 @@ function ProductReview({ attributes }) {
           </div>
         </div>
         <div className="review-right">
-          <div>
+          <div className="review-right-pros">
             <h3>Pros</h3>
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
-            </svg> */}
-            <p aria-label="Why do you like the product?">Easy to use</p>
-            <p aria-label="Why do you like the product?">Easy to use</p>
-            <p aria-label="Why do you like the product?">Easy to use</p>
+            <div className="review-right-pros-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+              </svg>
+              <p aria-label="Why do you like the product?">Easy to use</p>
+            </div>{" "}
+            <div className="review-right-pros-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+              </svg>
+              <p aria-label="Why do you like the product?">Easy to use</p>
+            </div>{" "}
+            <div className="review-right-pros-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+              </svg>
+              <p aria-label="Why do you like the product?">Easy to use</p>
+            </div>
           </div>
-          <div>
+          <div className="review-right-pos">
             <h3>Cons</h3>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
-            </svg>
-            <p aria-label="Why do you like the product?">Easy to use</p>
-            <p aria-label="Why do you like the product?">Easy to use</p>
-            <p aria-label="Why do you like the product?">Easy to use</p>
+            <div className="review-right-pros-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+              </svg>
+              <p aria-label="Why do you like the product?">Easy to use</p>
+            </div>
+            <div className="review-right-pros-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+              </svg>
+              <p aria-label="Why do you like the product?">Easy to use</p>
+            </div>
+            <div className="review-right-pros-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+              </svg>
+              <p aria-label="Why do you like the product?">Easy to use</p>
+            </div>
           </div>
         </div>
       </div>

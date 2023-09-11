@@ -3,6 +3,22 @@ $primaryColor: #4527a4;
 html {
 	scroll-behavior: smooth;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	position: relative;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	margin: 0px;
+	transition: all 500ms ease;
+	width: 100%;
+}
+html :where(.editor-styles-wrapper) p { 
+     margin: 0;
+}
 
 .wp-block-b-blocks-product-review {
 	* {
@@ -31,6 +47,31 @@ html {
 			.review-left-features {
 				display: grid;
 				gap: 15px;
+			}
+			.review-right {
+				// background: var(--background-color);
+				// grid-area: right;
+				// padding: 20px 20px 20px;
+				// overflow: hidden;
+				// border-bottom: var(--border-width) solid var(--border-color);
+				// border-left: calc(var(--border-width) / 2) solid var(--border-color);
+				// border-right: var(--border-width) solid var(--border-color);
+				.review-right-pros-item {
+					display: flex;
+					// padding: 2px 0;
+					align-items: center;
+					justify-content: center;
+					svg {
+						width: 20px;
+						height: 20px;
+						min-width: 20px;
+						min-height: 20px;
+						border-radius: 4px;
+						padding: 2px;
+						margin-top: 3px;
+						margin-right: 10px;
+					}
+				}
 			}
 		}
 		.review-footer-button span {
