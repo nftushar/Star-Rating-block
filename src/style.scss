@@ -28,9 +28,13 @@ html {
 			align-items: center;
 			flex-wrap: wrap;
 			margin-top: 20px;
+			.review-left-features {
+				display: grid;
+				gap: 15px;
+			}
 		}
 		.review-footer-button span {
-			background: #ED6F57;
+			background: #ed6f57;
 			color: #fff;
 			padding: 12px 50px;
 			margin: 20px 20px 0 0;
@@ -38,6 +42,19 @@ html {
 			text-align: center;
 			font-size: black;
 			text-decoration: none;
+		}
+		.review-left {
+			display: grid;
+			gap: 20px;
+			.review-left-content {
+				display: grid;
+				gap: 5px;
+			}
+		}
+		.review-footer {
+			margin-top: 30px;
+			display: grid;
+			gap: 20px;
 		}
 	}
 

@@ -27,23 +27,23 @@ function ProductReview({ attributes }) {
       <div className="review-body">
         <div className="review-left">
           <div className="review-left-features">
-            <div className="review-left-feature">
+            <div className="review-left-content">
               <span>Stability</span>
               <Rating attributes={attributes} />
+              <span>Feature description</span>
             </div>
-            <span>angular to build a GUI.</span>
           </div>
           <div className="review-left-features">
-            <div className="review-left-feature">
-              <span>2 Stability</span>
+            <div className="review-left-content">
+              <span>Ease of Use</span>
               <Rating attributes={attributes} />
+              <span>Feature description</span>
             </div>
-            <span>angular to build a GUI.</span>
           </div>
         </div>
         <div className="review-right">
-          <h3>Pros</h3>
           <div>
+            <h3>Pros</h3>
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -52,6 +52,20 @@ function ProductReview({ attributes }) {
             >
               <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
             </svg> */}
+            <p aria-label="Why do you like the product?">Easy to use</p>
+            <p aria-label="Why do you like the product?">Easy to use</p>
+            <p aria-label="Why do you like the product?">Easy to use</p>
+          </div>
+          <div>
+            <h3>Cons</h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M18.3 5.6L9.9 16.9l-4.6-3.4-.9 2.4 5.8 4.3 9.3-12.6z"></path>
+            </svg>
             <p aria-label="Why do you like the product?">Easy to use</p>
             <p aria-label="Why do you like the product?">Easy to use</p>
             <p aria-label="Why do you like the product?">Easy to use</p>
