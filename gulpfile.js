@@ -24,6 +24,6 @@ exports.bundle = () => (
 		'!todo.txt',
 		'!webpack.config.js',
 	])
-		.pipe(zip('product-review.zip'))
+		.pipe(zip('star-rating.zip'))
 		.pipe(gulp.dest('bundled'))
 );

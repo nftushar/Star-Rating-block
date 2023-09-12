@@ -3,123 +3,17 @@ $primaryColor: #4527a4;
 html {
 	scroll-behavior: smooth;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	position: relative;
-	font-family: "Ubuntu", sans-serif;
-	font-weight: 400;
-	margin: 0px;
-	transition: all 500ms ease;
-	width: 100%;
-}
-html :where(.editor-styles-wrapper) p {
-	margin: 0;
-}
 
-.wp-block-b-blocks-product-review {
+.wp-block-b-blocks-star-rating {
 	* {
 		box-sizing: border-box;
 	}
 
-	.main {
-		background-color: oldlace;
-		padding: 3em;
-		.review-header {
-			margin-top: 20px;
-		}
-		.review-header-desc {
-			margin-top: 25px;
-		}
-		.header-rating {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			flex-wrap: wrap;
-			margin-top: 20px;
-			span.dist-price {
-				font-size: 25px;
-				del {
-					opacity: 0.4;
-					padding-right: 10px;
-				}
-			}
-		}
-		.review-body {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			flex-wrap: wrap;
-			margin-top: 20px;
-			.review-left-features {
-				display: grid;
-				gap: 15px;
-			}
-			.review-right {
-				// background: var(--background-color);
-				// grid-area: right;
-				// padding: 20px 20px 20px;
-				// overflow: hidden;
-				// border-bottom: var(--border-width) solid var(--border-color);
-				// border-left: calc(var(--border-width) / 2) solid var(--border-color);
-				// border-right: var(--border-width) solid var(--border-color);
-				.review-right-pros-item {
-					display: flex;
-					// padding: 2px 0;
-					align-items: center;
-					// justify-content: center;
-					svg {
-						width: 20px;
-						height: 20px;
-						min-width: 20px;
-						min-height: 20px;
-						border-radius: 4px;
-						padding: 2px;
-						margin-top: 3px;
-						margin-right: 10px;
-					}
-				}
-			}
-		}
-		.review-footer-button span {
-			background: #ed6f57;
-			color: #fff;
-			padding: 12px 50px;
-			margin: 20px 20px 0 0;
-			cursor: pointer;
-			text-align: center;
-			font-size: black;
-			text-decoration: none;
-		}
-		.review-left {
-			display: grid;
-			gap: 20px;
-			.review-left-content {
-				display: grid;
-				gap: 5px;
-				.review-heading {
-					font-size: inherit;
-					font-weight: 600;
-				}
-				.span.review-desc {
-					font-size: 80%;
-					// font-size: 2px;
-					opacity: 0.7;
-				}
-			}
-		}
-		.review-footer {
-			margin-top: 30px;
-			display: grid;
-			gap: 20px;
-		}
-	}
-
-	.bBlocksProductReview {
+	.bBlocksRating {
 		display: flex;
+		// align-items: center;
+		// justify-content: right;
+		// gap: 10px;
 		.stars {
 			display: flex;
 			align-items: center;
@@ -141,7 +35,6 @@ html :where(.editor-styles-wrapper) p {
 
 				svg {
 					fill: #ccd6df;
-					vertical-align: initial;
 				}
 
 				.starFill {
@@ -151,7 +44,7 @@ html :where(.editor-styles-wrapper) p {
 					svg {
 						width: 20px;
 						height: 100%;
-						fill: #ffbb38;
+						fill: #f0ad4e;
 					}
 				}
 			}

@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import Settings from "./Settings";
 import Style from "./Style";
-// import Rating from './Components/Rating';
-import ProductReview from "./Components/ProductReview";
-
+import Rating from './Rating';
 
 const Edit = (props) => {
   const { className, attributes, setAttributes, clientId } = props;
-
 
   useEffect(() => {
     clientId && setAttributes({ cId: clientId });
@@ -16,11 +13,11 @@ const Edit = (props) => {
   return <>
     <Settings attributes={attributes} setAttributes={setAttributes} />
 
-    <div className={className} id={`bBlocksProductReview-${clientId}`}>
+    <div className={className} id={`bBlocksRating-${clientId}`}>
       <Style attributes={attributes} clientId={clientId} />
-      {/* <Rating attributes={attributes} /> */}
-      <ProductReview attributes={attributes}/>
-    </div>
+
+      <Rating attributes={attributes} />
+      </div>
   </>;
 };
 
