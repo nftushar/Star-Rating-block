@@ -1,9 +1,9 @@
-=== Star Rating ===
-Contributors: abuhayat, charlescormier
+=== Text Path ===
+Contributors: nftushar,
 Donate link: https://gum.co/wpdonate/
-Tags: block, star-rating, star, rating, Gutenberg block
+Tags: block, text-path, star, rating, Gutenberg block
 Requires at least: 5.0+
-Tested up to: 6.2.2
+Tested up to: 6.4.2
 Stable tag: 1.0.0
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -16,7 +16,7 @@ Short Description
 Large Description
 
 
-**[Demos](https://bblockswp.com/demo/star-rating/)**
+**[Demos](https://bblockswp.com/demo/text-path/)**
 
 
 = Features =
@@ -24,8 +24,8 @@ Large Description
 
 
 = How to use =
-- First, install the star-rating plugin
-- Add the star-rating block from the block category called "Widgets" in the Gutenberg editor.
+- First, install the text-path plugin
+- Add the text-path block from the block category called "Widgets" in the Gutenberg editor.
 - You can change block settings from the right-side settings sidebar.
 - Enjoy!
 
@@ -60,25 +60,25 @@ Large Description
 
 = From Gutenberg Editor: =
 1. Go to the WordPress Block/Gutenberg Editor
-2. Search For **star-rating**
-3. Click on the **star-rating** to add the block
+2. Search For **text-path**
+3. Click on the **text-path** to add the block
 
 = Download & Upload: =
-1. Download the **star-rating** plugin (*.zip file*)
+1. Download the **text-path** plugin (*.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
-3. Click on **Upload Plugin** and choose the **`star-rating.zip`** file and click on **Install Now**
+3. Click on **Upload Plugin** and choose the **`text-path.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!
 
 = Manually: =
-1. Download and upload the **star-rating** plugin to the **`/wp-content/plugins/`** directory
+1. Download and upload the **text-path** plugin to the **`/wp-content/plugins/`** directory
 2. Activate the plugin through the Plugins menu in WordPress
 
 
 == Frequently Asked Questions ==
 
-= Is star-rating free? =
+= Is text-path free? =
 
-Yes, star-rating is a free Gutenberg block plugin.
+Yes, text-path is a free Gutenberg block plugin.
 
 = Does it work with any WordPress theme? =
 
@@ -94,12 +94,12 @@ You can use unlimited times as you want.
 
 = Where can I get support? =
 
-You can post your questions on the [support forum here](https://wordpress.org/support/plugin/star-rating/)
+You can post your questions on the [support forum here](https://wordpress.org/support/plugin/text-path/)
 
 
 == Screenshots ==
 
-1. star-rating
+1. text-path
 2. Settings
 
 

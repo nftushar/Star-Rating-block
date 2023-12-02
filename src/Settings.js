@@ -7,10 +7,7 @@ import { PanelBody, TabPanel, TextControl, SelectControl, RangeControl, __experi
 import { BColor, BtnGroup, MultiShadowControl, Typography } from "../../Components"
 import { emUnit, pxUnit } from "../../Components/utils/options";
 
-const iconOptions = [
-	{ label: __('Solid', 'rating'), value: 'solid', icon: solidStar },
-	{ label: __('Outline', 'rating'), value: 'outline', icon: outlineStar }
-];
+ 
 const iconAlignments = [
 	{ label: __('left', 'rating'), value: 'left', icon: 'editor-alignleft' },
 	{ label: __('center', 'rating'), value: 'center', icon: 'editor-aligncenter' },
@@ -33,7 +30,7 @@ const Settings = ({ attributes, setAttributes }) => {
 				{tab.name === "general" && (
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Settings", "star-rating")}
+						title={__("Settings", "text-path")}
 					>
 						<SelectControl
 							label="Rating Scale"
@@ -48,38 +45,31 @@ const Settings = ({ attributes, setAttributes }) => {
 
 						<TextControl
 							className="mt20"
-							label={__("Prefix", "star-rating")}
+							label={__("Prefix", "text-path")}
 							value={prefix}
 							onChange={(val) => setAttributes({ prefix: val })}
 						/>
 
 						<RangeControl
 							className="mt20"
-							label={__("Rating", "star-rating")}
+							label={__("Rating", "text-path")}
 							labelPosition="left"
 							value={rating}
 							onChange={(val) => setAttributes({ rating: val })}
 							min={1}
 							max={ratingScale}
 							step={0.1}
-						/>
-
-						<BtnGroup
-							className="mt20"
-							label={__("Icon Style", "star-rating")}
-							value={iconStyle}
-							onChange={val => setAttributes({ iconStyle: val })}
-							options={iconOptions} isIcon={true} />
+						/> 
 					</PanelBody>
 				)}
 
 				{tab.name === "style" && (
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Title", "star-rating")}
+						title={__("Title", "text-path")}
 					>
 						<UnitControl
-							label={__("Gap", "star-rating")}
+							label={__("Gap", "text-path")}
 							labelPosition="left"
 							value={gap}
 							onChange={(val) => setAttributes({ gap: val })}
@@ -89,16 +79,16 @@ const Settings = ({ attributes, setAttributes }) => {
 
 						<BtnGroup
 							className="mt20"
-							label={__("Alignment", "star-rating")}
+							label={__("Alignment", "text-path")}
 							value={alignment}
 							onChange={val => setAttributes({ alignment: val })}
 							options={iconAlignments} isIcon={true} />
 
-						<BColor label={__('Text Color', 'star-rating')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#0000' />
+						<BColor label={__('Text Color', 'text-path')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#0000' />
 
-						<Typography label={__('Text Typography', 'star-rating')} value={textTypo} onChange={val => setAttributes({ textTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
+						<Typography label={__('Text Typography', 'text-path')} value={textTypo} onChange={val => setAttributes({ textTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
 
-						<MultiShadowControl label={__('Text Shadow', 'star-rating')} value={textShadow} onChange={val => setAttributes({ textShadow: val })} type="text" produce={produce} />
+						<MultiShadowControl label={__('Text Shadow', 'text-path')} value={textShadow} onChange={val => setAttributes({ textShadow: val })} type="text" produce={produce} />
 
 					</PanelBody>
 				)}

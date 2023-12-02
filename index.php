@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Star Rating
- * Description: starRating Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive starRating  and more..
+ * Plugin Name: Text Path
+ * Description: Responsive textPath easy-to-use & more..
  * Version: 1.0.0
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain: star-rating
+ * Text Domain: text-path
  */
 // ABS PATH
 if ( !defined( 'ABSPATH' ) ) { exit; }

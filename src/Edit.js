@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Settings from "./Settings";
 import Style from "./Style";
-import Rating from './Rating';
+import Path from './Path';
+// import { Path } from '@wordpress/components';
 
 const Edit = (props) => {
   const { className, attributes, setAttributes, clientId } = props;
@@ -13,10 +14,10 @@ const Edit = (props) => {
   return <>
     <Settings attributes={attributes} setAttributes={setAttributes} />
 
-    <div className={className} id={`bBlocksRating-${clientId}`}>
+    <div className={className} id={`bBlocksPath-${clientId}`}>
       <Style attributes={attributes} clientId={clientId} />
 
-      <Rating attributes={attributes} />
+      <Path attributes={attributes} />
       </div>
   </>;
 };

@@ -1,21 +1,23 @@
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom';
 
 import "./style.scss";
 import Style from "./Style";
-import Rating from './Rating';
+import Path from './Path';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const iframeEls = document.querySelectorAll(".wp-block-b-blocks-star-rating");
-    iframeEls.forEach((iframeEl) => {
-        const attributes = JSON.parse(iframeEl.dataset.attributes);
+    const pathsEls = document.querySelectorAll(".wp-block-b-blocks-text-path");
+    pathsEls.forEach((pathsEl) => {
+        const attributes = JSON.parse(pathsEl.dataset.attributes);
         const { cId } = attributes;
 
-        render(<>
-            <Style attributes={attributes} clientId={cId} />
-            <Rating attributes={attributes} />
-        </>, iframeEl);
+        const root = createRoot(pathsEl);
+        root.render(
+            <>
+                <Style attributes={attributes} clientId={cId} />
+                <Path attributes={attributes} />
+            </>
+        );
 
-        iframeEl?.removeAttribute("data-attributes");
+        pathsEl?.removeAttribute("data-attributes");
     });
 });
-

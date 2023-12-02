@@ -1,12 +1,15 @@
 {
   "apiVersion": "1",
-  "name": "b-blocks/star-rating",
-  "title": "Star Rating",
-  "description": "Gutenberg editing with easy-to-use, responsive star-rating  more.",
+  "name": "b-blocks/text-path",
+  "title": "Text Path",
+  "description": "Gutenberg editing with easy-to-use, responsive text-path  more.",
   "category": "media",
-  "keywords": ["star-rating", "Rating", "Gutenberg"],
-  "textdomain": "star-rating",
-
+  "keywords": [
+    "text-path",
+    "Rating",
+    "Gutenberg"
+  ],
+  "textdomain": "text-path",
   "attributes": {
     "align": {
       "type": "string",
@@ -56,7 +59,10 @@
     }
   },
   "supports": {
-    "align": ["wide", "full"],
+    "align": [
+      "wide",
+      "full"
+    ],
     "html": false
   },
   "example": {
