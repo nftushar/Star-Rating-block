@@ -50,6 +50,10 @@
         "fontSize": "16px"
       }
     },
+    "strokeColor": {
+      "type": "string",
+      "default": "red"
+    },
     "textColor": {
       "type": "string",
       "default": "#7a7a7a"

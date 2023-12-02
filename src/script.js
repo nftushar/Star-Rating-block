@@ -5,7 +5,7 @@ import Style from "./Style";
 import Path from './Path';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const pathsEls = document.querySelectorAll(".wp-block-b-blocks-text-path");
+    const pathsEls = document.querySelectorAll(".bBlocksPath");
     pathsEls.forEach((pathsEl) => {
         const attributes = JSON.parse(pathsEl.dataset.attributes);
         const { cId } = attributes;

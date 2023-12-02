@@ -16,7 +16,7 @@ const iconAlignments = [
 
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { svgPath, rating, iconStyle, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
+	const { svgPath, rating, strokeColor, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
 
 	return <InspectorControls>
 		<TabPanel
@@ -85,6 +85,8 @@ const Settings = ({ attributes, setAttributes }) => {
 							value={alignment}
 							onChange={val => setAttributes({ alignment: val })}
 							options={iconAlignments} isIcon={true} />
+
+						<BColor label={__('Stroke Color', 'text-path')} value={strokeColor} onChange={val => setAttributes({ strokeColor: val })} defaultColor='#0000' />
 
 						<BColor label={__('Text Color', 'text-path')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#0000' />
 

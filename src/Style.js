@@ -2,36 +2,38 @@ import { getMultiShadowCSS, getTypoCSS } from "../../Components/utils/getCSS";
 import { getArrFromNum } from "./utils/functions";
 
 const Style = ({ attributes, clientId }) => {
-    const { rating, gap, alignment, textTypo, textColor, textShadow } = attributes;
+    const { path, gap, alignment, textTypo, textColor, textShadow } = attributes;
 
-    const ratingSl = `#bBlocksRating-${clientId} .bBlocksRating`;
-    const starSl = `${ratingSl} .paths .star`;
-    const intAndDec = (rating + '').split('.');
-    const ratingInt = parseInt(intAndDec[0]);
-    const ratingDec = parseInt(intAndDec[1] || 0);
+    const pathSl = `#bBlocksPath-${clientId}`;
+    // div#bBlocksPath-b7cd7963-594f-425b-ab8b-9f70e3c560eb
+    const textSl = `${pathSl} .paths .text`;
+    const intAndDec = (path + '').split('.');
+    const pathInt = parseInt(intAndDec[0]);
+    const pathDec = parseInt(intAndDec[1] || 0);
 
     return <style dangerouslySetInnerHTML={{
         __html: `
         ${getTypoCSS(``, textTypo)?.googleFontLink}
-        ${getTypoCSS(`${ratingSl} .ratingPrefix`, textTypo)?.styles}
+        ${getTypoCSS(`${pathSl} .pathPrefix`, textTypo)?.styles}
 
-          ${ratingSl} {
+          ${pathSl} {
+            
             justify-content: ${alignment};
             gap: ${gap};
             color: ${textColor}; 
           }
 
-          ${ratingSl} .ratingPrefix{
+          ${pathSl} .pathPrefix{
             text-shadow: ${getMultiShadowCSS(textShadow, 'text')}
           }
 
-        ${getArrFromNum(ratingInt).map((index) => `${starSl}:nth-child(${index}) .starFill`).join(', ')}{
+        ${getArrFromNum(pathInt).map((index) => `${textSl}:nth-child(${index}) .textFill`).join(', ')}{
             width: 100%;
         }
 
-        ${starSl}:nth-child(${ratingInt + 1}) .starFill{
+        ${textSl}:nth-child(${pathInt + 1}) .textFill{
             width: ${(() => {
-                switch (ratingDec) {
+                switch (pathDec) {
                     case 1:
                         return 25;
                     case 2:
