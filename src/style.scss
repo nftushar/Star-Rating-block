@@ -8,6 +8,7 @@
         border-radius: 10px;
         overflow: visible;
         transform: rotate(0deg);
+        // display: none;
     }
 
     path {
@@ -16,7 +17,7 @@
 
     text {
         font-size: 24px; // Adjust the font size as needed
-        fill: #333; // Adjust the text color as needed
+        // fill: rgb(7, 214, 0); // Adjust the text color as needed
     }
 
     .pathPrefix {
