@@ -7,7 +7,7 @@ import { PanelBody, TabPanel, TextControl, SelectControl, RangeControl, __experi
 import { BColor, BtnGroup, MultiShadowControl, Typography } from "../../Components"
 import { emUnit, pxUnit } from "../../Components/utils/options";
 
- 
+
 const iconAlignments = [
 	{ label: __('left', 'rating'), value: 'left', icon: 'editor-alignleft' },
 	{ label: __('center', 'rating'), value: 'center', icon: 'editor-aligncenter' },
@@ -16,7 +16,7 @@ const iconAlignments = [
 
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { ratingScale, rating, iconStyle, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
+	const { svgPath, rating, iconStyle, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
 
 	return <InspectorControls>
 		<TabPanel
@@ -30,17 +30,19 @@ const Settings = ({ attributes, setAttributes }) => {
 				{tab.name === "general" && (
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Settings", "text-path")}
-					>
+						title={__("Settings", "text-path")} >
 						<SelectControl
-							label="Rating Scale"
+							label="Path Type"
 							labelPosition="left"
-							value={ratingScale}
+							value={svgPath}
 							options={[
-								{ label: '0-5', value: 5 },
-								{ label: '0-10', value: 10 },
+								{ label: 'Circle', value: "M.25,125.25a125,125,0,1,1,125,125,125,125,0,0,1-125-125" },
+								{ label: 'Arc', value: "M0 50 A50 50, 0, 1, 1, 100 50" },
+								{ label: 'Line', value: "M 0 27 l 250 -22" },
+								{ label: 'Oval', value: "M.25,62.875C.25,28.2882,56.2144.25,125.25.25s125,28.0382,125,62.625-55.9644,62.625-125,62.625S.25,97.4619.25,62.875" },
+								{ label: 'Spiral', value: "M.1848,49.0219a149.3489,149.3489,0,0,1,210.9824-9.8266,119.479,119.479,0,0,1,7.8613,168.786A95.5831,95.5831,0,0,1,84,214.27a76.4666,76.4666,0,0,1-5.0312-108.023" },
 							]}
-							onChange={(val) => setAttributes({ ratingScale: parseInt(val) })}
+							onChange={(val) => setAttributes({ svgPath: val })}
 						/>
 
 						<TextControl
@@ -57,9 +59,9 @@ const Settings = ({ attributes, setAttributes }) => {
 							value={rating}
 							onChange={(val) => setAttributes({ rating: val })}
 							min={1}
-							max={ratingScale}
+							max={svgPath}
 							step={0.1}
-						/> 
+						/>
 					</PanelBody>
 				)}
 

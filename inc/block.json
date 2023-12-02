@@ -19,10 +19,11 @@
       "type": "string",
       "default": ""
     },
-    "ratingScale": {
-      "type": "number",
-      "default": 5
+    "svgPath": {
+      "type": "string",
+      "default": "M0 50 A50 50, 0, 1, 1, 100 50"
     },
+    
     "rating": {
       "type": "number",
       "default": 5.0
