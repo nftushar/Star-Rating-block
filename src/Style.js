@@ -1,30 +1,32 @@
 import { getMultiShadowCSS, getTypoCSS } from "../../Components/utils/getCSS";
-import { getArrFromNum } from "./utils/functions";
+import { getArrFromNum, getBoxValue } from "./utils/functions";
 
 const Style = ({ attributes, clientId }) => {
-    const { path, gap, alignment, textTypo, textColor, textShadow } = attributes;
-
+    const { path, alignment, textTypo, textColor, textShadow, padding } = attributes; 
     const pathSl = `#bBlocksPath-${clientId}`;
-    const textSl = `${pathSl} textPath`;
+    const svgEL = `${pathSl} svg`
+    const textSize = `${svgEL} .text`
+    const textSl = `${textSize} textPath`;
 
-    return <style dangerouslySetInnerHTML={{
-        __html: `
-        ${getTypoCSS(``, textTypo)?.googleFontLink}
-        ${getTypoCSS(`${pathSl} .pathPrefix`, textTypo)?.styles}
+    return <style>
+        {`
+            ${getTypoCSS(``, textTypo)?.googleFontLink}
+            ${getTypoCSS(`${textSize}`, textTypo)?.styles}
 
         ${pathSl} {
-            justify-content: ${alignment};
-            gap: ${gap};
-            fill: ${textColor}; 
+            justify-content: ${alignment}; 
+            fill: ${textColor};  
         }
-
+        ${svgEL}{
+            padding: ${getBoxValue(padding)}
+        } 
         ${textSl} {
             text-shadow: ${getMultiShadowCSS(textShadow, 'text')};
             fill: ${textColor}; 
         } 
         }
-    `}}
-    />
+    `}
+    </style>
 }
 
 export default Style;

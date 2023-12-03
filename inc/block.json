@@ -32,14 +32,19 @@
       "type": "string",
       "default": "solid"
     },
-    "prefix": {
+    "mainText": {
       "type": "string",
-      "default": ""
+      "default": "Add Your Curvy Text Here  Add Your Curvy Text Here  Add Your Curvy Text Here"
     },
-    "gap": {
-      "type": "string",
-      "default": "10px"
-    },
+    "padding": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		}, 
     "alignment": {
       "type": "string",
       "default": "center"
@@ -54,6 +59,10 @@
       "type": "string",
       "default": "red"
     },
+    "fillColor": {
+      "type": "string",
+      "default": "#fff"
+    }, 
     "textColor": {
       "type": "string",
       "default": "#B4FD0B"

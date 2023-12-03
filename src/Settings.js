@@ -2,7 +2,7 @@ import { __ } from "@wordpress/i18n";
 import { InspectorControls } from "@wordpress/block-editor";
 import { solidStar, outlineStar } from './utils/icons';
 import produce from "immer";
-import { PanelBody, TabPanel, TextControl, SelectControl, RangeControl, __experimentalUnitControl as UnitControl } from "@wordpress/components";
+import { PanelBody, PanelRow, TabPanel, TextControl, SelectControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, __experimentalNumberControl as NumberControl } from "@wordpress/components";
 
 import { BColor, BtnGroup, MultiShadowControl, Typography } from "../../Components"
 import { emUnit, pxUnit } from "../../Components/utils/options";
@@ -16,7 +16,11 @@ const iconAlignments = [
 
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { svgPath, rating, strokeColor, prefix, gap, alignment, textTypo, textColor, textShadow } = attributes;
+	const { svgPath, rating, strokeColor, mainText, padding, alignment, textTypo, textColor, textShadow, fillColor } = attributes;
+
+	const { fontSize } = textTypo;
+// console.log(fontSize);
+
 
 	return <InspectorControls>
 		<TabPanel
@@ -31,8 +35,15 @@ const Settings = ({ attributes, setAttributes }) => {
 					<PanelBody
 						className="bPlPanelBody"
 						title={__("Settings", "text-path")} >
+						<TextControl
+							className="mt20"
+							label={__("Main Text", "text-path")}
+							value={mainText}
+							onChange={(val) => setAttributes({ mainText: val })}
+						/>
 						<SelectControl
 							label="Path Type"
+							className="mt20"
 							labelPosition="left"
 							value={svgPath}
 							options={[
@@ -44,40 +55,13 @@ const Settings = ({ attributes, setAttributes }) => {
 							]}
 							onChange={(val) => setAttributes({ svgPath: val })}
 						/>
-
-						<TextControl
-							className="mt20"
-							label={__("Prefix", "text-path")}
-							value={prefix}
-							onChange={(val) => setAttributes({ prefix: val })}
-						/>
-
-						<RangeControl
-							className="mt20"
-							label={__("Rating", "text-path")}
-							labelPosition="left"
-							value={rating}
-							onChange={(val) => setAttributes({ rating: val })}
-							min={1}
-							max={svgPath}
-							step={0.1}
-						/>
 					</PanelBody>
 				)}
 
 				{tab.name === "style" && (
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Title", "text-path")}
-					>
-						<UnitControl
-							label={__("Gap", "text-path")}
-							labelPosition="left"
-							value={gap}
-							onChange={(val) => setAttributes({ gap: val })}
-							units={[pxUnit(10), emUnit(1)]}
-							isResetValueOnUnitChange={true}
-						/>
+						title={__("Title", "text-path")} >
 
 						<BtnGroup
 							className="mt20"
@@ -85,8 +69,30 @@ const Settings = ({ attributes, setAttributes }) => {
 							value={alignment}
 							onChange={val => setAttributes({ alignment: val })}
 							options={iconAlignments} isIcon={true} />
+							
+						{/* <NumberControl
+							className="mt20"
+							label={__("Font Size", "text-path")}
+							isShiftStepEnabled={true}
+							onChange={(val) => setAttributes({ fontSize: val })}
+							shiftStep={1}
+						/> */}
 
+						<PanelRow className="mt20">
+							<BoxControl
+								label={__('Padding', 'text-path')}
+								values={padding}
+								resetValues={{
+									"top": "0px",
+									"right": "0px",
+									"bottom": "0px",
+									"left": "0px"
+								}}
+								onChange={(value) => setAttributes({ padding: value })} />
+						</PanelRow>
 						<BColor label={__('Stroke Color', 'text-path')} value={strokeColor} onChange={val => setAttributes({ strokeColor: val })} defaultColor='#0000' />
+
+						<BColor label={__('fill Color', 'text-path')} value={fillColor} onChange={val => setAttributes({ fillColor: val })} defaultColor='#ffff' />
 
 						<BColor label={__('Text Color', 'text-path')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#0000' />
 
