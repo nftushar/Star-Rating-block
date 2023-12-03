@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-07T04:57:39+00:00\n"
+"POT-Creation-Date: 2023-12-03T11:17:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: text-path\n"
@@ -19,7 +19,7 @@ msgid "Text Path"
 msgstr ""
 
 #. Description of the plugin
-msgid "textPath Gutenberg plugin: Streamline Gutenberg editing with easy-to-use, responsive textPath  and more.."
+msgid "Responsive textPath easy-to-use & more.."
 msgstr ""
 
 #. Author of the plugin
@@ -35,15 +35,19 @@ msgid "Settings"
 msgstr ""
 
 #: dist/editor.js:1
-msgid "Prefix"
+msgid "Main Text"
 msgstr ""
 
 #: dist/editor.js:1
-msgid "Rating"
+msgid "Content"
 msgstr ""
 
 #: dist/editor.js:1
-msgid "Icon Style"
+msgid "Alignment"
+msgstr ""
+
+#: dist/editor.js:1
+msgid "Padding"
 msgstr ""
 
 #: dist/editor.js:1
@@ -51,11 +55,11 @@ msgid "Title"
 msgstr ""
 
 #: dist/editor.js:1
-msgid "Gap"
+msgid "Stroke Color"
 msgstr ""
 
 #: dist/editor.js:1
-msgid "Alignment"
+msgid "fill Color"
 msgstr ""
 
 #: dist/editor.js:1
@@ -87,7 +91,7 @@ msgstr ""
 
 #: inc/block.json
 msgctxt "block keyword"
-msgid "Rating"
+msgid "Text-Path"
 msgstr ""
 
 #: inc/block.json

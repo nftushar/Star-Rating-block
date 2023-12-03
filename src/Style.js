@@ -1,8 +1,8 @@
 import { getMultiShadowCSS, getTypoCSS } from "../../Components/utils/getCSS";
-import { getArrFromNum, getBoxValue } from "./utils/functions";
+import {  getBoxValue } from "./utils/functions";
 
 const Style = ({ attributes, clientId }) => {
-    const { path, alignment, textTypo, textColor, textShadow, padding } = attributes; 
+    const { alignment, textTypo, textColor, textShadow, padding } = attributes; 
     const pathSl = `#bBlocksPath-${clientId}`;
     const svgEL = `${pathSl} svg`
     const textSize = `${svgEL} .text`
@@ -16,6 +16,7 @@ const Style = ({ attributes, clientId }) => {
         ${pathSl} {
             justify-content: ${alignment}; 
             fill: ${textColor};  
+            margin-top: 50px;
         }
         ${svgEL}{
             padding: ${getBoxValue(padding)}

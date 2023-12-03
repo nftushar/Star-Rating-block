@@ -1,58 +1,24 @@
 import { __ } from "@wordpress/i18n";
-import { InspectorControls } from "@wordpress/block-editor";
-import {
-	solidStar,
-	outlineStar
-} from './utils/icons';
-import produce from "immer";
-import {
-	PanelBody,
-	PanelRow,
-	TabPanel,
-	TextControl,
-	SelectControl,
-	RangeControl,
-	__experimentalUnitControl as UnitControl,
-	__experimentalBoxControl as BoxControl,
-	__experimentalNumberControl as NumberControl
-} from "@wordpress/components";
+import { InspectorControls } from "@wordpress/block-editor"; 
+import { produce } from 'immer';
+import { PanelBody, PanelRow, TabPanel, TextControl, SelectControl,   __experimentalBoxControl as BoxControl } from "@wordpress/components";
 
 import {
 	BColor,
 	BtnGroup,
 	MultiShadowControl,
 	Typography
-} from "../../Components";
-import {
-	emUnit,
-	pxUnit
-} from "../../Components/utils/options";
+} from "../../Components"; 
 
-const iconAlignments = [
-	{ label: __('left', 'rating'), value: 'left', icon: 'editor-alignleft' },
-	{ label: __('center', 'rating'), value: 'center', icon: 'editor-aligncenter' },
-	{ label: __('right', 'rating'), value: 'right', icon: 'editor-alignright' }
+const pathAlignments = [
+	{ label: __('left', 'text-path'), value: 'left', icon: 'editor-alignleft' },
+	{ label: __('center', 'text-path'), value: 'center', icon: 'editor-aligncenter' },
+	{ label: __('right', 'text-path'), value: 'right', icon: 'editor-alignright' }
 ];
 
 const Settings = ({ attributes, setAttributes }) => {
-	const {
-		svgPath,
-		rating,
-		strokeColor,
-		mainText,
-		padding,
-		alignment,
-		textTypo,
-		textColor,
-		textShadow,
-		fillColor
-	} = attributes;
-
-	const {
-		fontSize
-	} = textTypo;
-	// console.log(fontSize);
-
+	const { svgPath,  strokeColor, mainText, padding, alignment, textTypo, textColor, textShadow, fillColor } = attributes; 
+ 
 	return <InspectorControls>
 		<TabPanel
 			className="bPlTabPanel"
@@ -101,7 +67,7 @@ const Settings = ({ attributes, setAttributes }) => {
 							label={__("Alignment", "text-path")}
 							value={alignment}
 							onChange={val => setAttributes({ alignment: val })}
-							options={iconAlignments} isIcon={true}
+							options={pathAlignments} isIcon={true}
 						/>
 
 						<PanelRow className="mt20">
@@ -134,10 +100,6 @@ const Settings = ({ attributes, setAttributes }) => {
 
 						<MultiShadowControl label={__('Text Shadow', 'text-path')} value={textShadow} onChange={val => setAttributes({ textShadow: val })} type="text" produce={produce} />
 					</PanelBody>
-
-
-
-
 				</>
 				}
 			</>}

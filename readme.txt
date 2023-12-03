@@ -1,7 +1,7 @@
 === Text Path ===
 Contributors: nftushar,
 Donate link: https://gum.co/wpdonate/
-Tags: block, text-path, star, rating, Gutenberg block
+Tags:  text-path, text, path, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 6.4.2
 Stable tag: 1.0.0

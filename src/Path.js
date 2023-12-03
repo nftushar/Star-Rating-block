@@ -1,5 +1,4 @@
-import { getArrFromNum } from './utils/functions';
-import { solidStar, outlineStar } from './utils/icons';
+ 
 
 const Path = ({ attributes }) => {
     const { svgPath, strokeColor, cId, mainText, fillColor  } = attributes;
