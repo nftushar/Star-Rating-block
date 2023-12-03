@@ -65,7 +65,7 @@
     }, 
     "textColor": {
       "type": "string",
-      "default": "#B4FD0B"
+      "default": "#31304D"
     },
     "textShadow": {
       "type": "array",

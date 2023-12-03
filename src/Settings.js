@@ -1,12 +1,32 @@
 import { __ } from "@wordpress/i18n";
 import { InspectorControls } from "@wordpress/block-editor";
-import { solidStar, outlineStar } from './utils/icons';
+import {
+	solidStar,
+	outlineStar
+} from './utils/icons';
 import produce from "immer";
-import { PanelBody, PanelRow, TabPanel, TextControl, SelectControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, __experimentalNumberControl as NumberControl } from "@wordpress/components";
+import {
+	PanelBody,
+	PanelRow,
+	TabPanel,
+	TextControl,
+	SelectControl,
+	RangeControl,
+	__experimentalUnitControl as UnitControl,
+	__experimentalBoxControl as BoxControl,
+	__experimentalNumberControl as NumberControl
+} from "@wordpress/components";
 
-import { BColor, BtnGroup, MultiShadowControl, Typography } from "../../Components"
-import { emUnit, pxUnit } from "../../Components/utils/options";
-
+import {
+	BColor,
+	BtnGroup,
+	MultiShadowControl,
+	Typography
+} from "../../Components";
+import {
+	emUnit,
+	pxUnit
+} from "../../Components/utils/options";
 
 const iconAlignments = [
 	{ label: __('left', 'rating'), value: 'left', icon: 'editor-alignleft' },
@@ -14,13 +34,24 @@ const iconAlignments = [
 	{ label: __('right', 'rating'), value: 'right', icon: 'editor-alignright' }
 ];
 
-
 const Settings = ({ attributes, setAttributes }) => {
-	const { svgPath, rating, strokeColor, mainText, padding, alignment, textTypo, textColor, textShadow, fillColor } = attributes;
+	const {
+		svgPath,
+		rating,
+		strokeColor,
+		mainText,
+		padding,
+		alignment,
+		textTypo,
+		textColor,
+		textShadow,
+		fillColor
+	} = attributes;
 
-	const { fontSize } = textTypo;
-// console.log(fontSize);
-
+	const {
+		fontSize
+	} = textTypo;
+	// console.log(fontSize);
 
 	return <InspectorControls>
 		<TabPanel
@@ -34,7 +65,8 @@ const Settings = ({ attributes, setAttributes }) => {
 				{tab.name === "general" && (
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Settings", "text-path")} >
+						title={__("Settings", "text-path")}
+					>
 						<TextControl
 							className="mt20"
 							label={__("Main Text", "text-path")}
@@ -58,25 +90,19 @@ const Settings = ({ attributes, setAttributes }) => {
 					</PanelBody>
 				)}
 
-				{tab.name === "style" && (
+				{tab.name === "style" && <>
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Title", "text-path")} >
+						title={__("Content", "text-path")}
+					>
 
 						<BtnGroup
 							className="mt20"
 							label={__("Alignment", "text-path")}
 							value={alignment}
 							onChange={val => setAttributes({ alignment: val })}
-							options={iconAlignments} isIcon={true} />
-							
-						{/* <NumberControl
-							className="mt20"
-							label={__("Font Size", "text-path")}
-							isShiftStepEnabled={true}
-							onChange={(val) => setAttributes({ fontSize: val })}
-							shiftStep={1}
-						/> */}
+							options={iconAlignments} isIcon={true}
+						/>
 
 						<PanelRow className="mt20">
 							<BoxControl
@@ -88,20 +114,32 @@ const Settings = ({ attributes, setAttributes }) => {
 									"bottom": "0px",
 									"left": "0px"
 								}}
-								onChange={(value) => setAttributes({ padding: value })} />
+								onChange={(value) => setAttributes({ padding: value })}
+							/>
 						</PanelRow>
+
+					</PanelBody>
+					<PanelBody
+						className="bPlPanelBody"
+						title={__("Title", "text-path")}
+						initialOpen={ false }
+					>
 						<BColor label={__('Stroke Color', 'text-path')} value={strokeColor} onChange={val => setAttributes({ strokeColor: val })} defaultColor='#0000' />
 
 						<BColor label={__('fill Color', 'text-path')} value={fillColor} onChange={val => setAttributes({ fillColor: val })} defaultColor='#ffff' />
 
-						<BColor label={__('Text Color', 'text-path')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#0000' />
+						<BColor label={__('Text Color', 'text-path')} value={textColor} onChange={val => setAttributes({ textColor: val })} defaultColor='#31304D' />
 
 						<Typography label={__('Text Typography', 'text-path')} value={textTypo} onChange={val => setAttributes({ textTypo: val })} defaults={{ fontSize: 16 }} produce={produce} />
 
 						<MultiShadowControl label={__('Text Shadow', 'text-path')} value={textShadow} onChange={val => setAttributes({ textShadow: val })} type="text" produce={produce} />
-
 					</PanelBody>
-				)}
+
+
+
+
+				</>
+				}
 			</>}
 		</TabPanel>
 	</InspectorControls>;
