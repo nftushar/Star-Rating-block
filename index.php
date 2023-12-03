@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Text Path
  * Description: Responsive textPath easy-to-use & more..
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
