@@ -1,33 +1,65 @@
+// Style.js
+import React from "react";
 import { getMultiShadowCSS, getTypoCSS } from "../../Components/utils/getCSS";
-import {  getBoxValue } from "./utils/functions";
+import { getBoxValue } from "./utils/functions";
 
 const Style = ({ attributes, clientId }) => {
-    const { alignment, textTypo, textColor, textShadow, padding } = attributes; 
-    const pathSl = `#bBlocksPath-${clientId}`;
-    const svgEL = `${pathSl} svg`
-    const textSize = `${svgEL} .text`
-    const textSl = `${textSize} textPath`;
+  const { alignment, textTypo, textColor, textShadow, padding, floating } = attributes;
+  const { translate, rotate, scale, enabled: floatingEnabled } = floating;
+  const { translateX, translateY, duration, delay } = translate;
+  const { rotateX, rotateY, rotateZ, rotateDuration, rotateDelay } = rotate;
+  const { scaleX, scaleY } = scale;
 
-    return <style>
-        {`
-            ${getTypoCSS(``, textTypo)?.googleFontLink}
-            ${getTypoCSS(`${textSize}`, textTypo)?.styles}
+  const pathSl = `#bBlocksPath-${clientId}`;
+  const svgEL = `${pathSl} svg`;
+  const textSize = `${svgEL} .text`;
+  const textSl = `${textSize} textPath`; 
+
+  return (
+    <style>
+      {`
+        ${getTypoCSS(``, textTypo)?.googleFontLink}
+        ${getTypoCSS(`${textSize}`, textTypo)?.styles}
+
+        @keyframes floatingAnimation${clientId} {
+          0% {
+            transform: translateX(0) translateY(0) rotateX(0) rotateY(0) rotateZ(0) scaleX(1) scaleY(1);
+          }
+          100% {
+            transform: translateX(${translateX}px) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scaleX(${scaleX}) scaleY(${scaleY});
+          }
+        }   
+  
+        ${pathSl} {
+          display: grid;
+          justify-content: center;
+        } 
+
+        ${pathSl} {  
+          ${floatingEnabled ? `
+            animation: floatingAnimation${clientId} ${duration}s infinite alternate ease-in-out ${delay}s;
+          ` : ''}
+        } 
+        ${pathSl}.custom-animation-class {
+          animation-duration: ${rotateDuration}s;
+          animation-delay: ${rotateDelay}s;
+        }
 
         ${pathSl} {
-            justify-content: ${alignment}; 
-            fill: ${textColor};  
-            margin-top: 50px;
+          justify-content: ${alignment}; 
+          fill: ${textColor};  
+          margin-top: 50px;
         }
-        ${svgEL}{
-            padding: ${getBoxValue(padding)}
+        ${svgEL} {
+          padding: ${getBoxValue(padding)};
         } 
         ${textSl} {
-            text-shadow: ${getMultiShadowCSS(textShadow, 'text')};
-            fill: ${textColor}; 
+          text-shadow: ${getMultiShadowCSS(textShadow, 'text')};
+          fill: ${textColor}; 
         } 
-        }
-    `}
+      `}
     </style>
-}
+  );
+};
 
 export default Style;

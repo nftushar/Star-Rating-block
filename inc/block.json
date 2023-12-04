@@ -22,7 +22,7 @@
     "svgPath": {
       "type": "string",
       "default": "M0 50 A50 50, 0, 1, 1, 100 50"
-    }, 
+    },
     "iconStyle": {
       "type": "string",
       "default": "solid"
@@ -32,14 +32,14 @@
       "default": "Add Your Curvy Text Here  Add Your Curvy Text Here  Add Your Curvy Text Here"
     },
     "padding": {
-			"type": "object",
-			"default": {
-				"top": "0px",
-				"right": "0px",
-				"bottom": "0px",
-				"left": "0px"
-			}
-		}, 
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
     "alignment": {
       "type": "string",
       "default": "center"
@@ -57,7 +57,7 @@
     "fillColor": {
       "type": "string",
       "default": "#fff"
-    }, 
+    },
     "textColor": {
       "type": "string",
       "default": "#31304D"
@@ -65,6 +65,29 @@
     "textShadow": {
       "type": "array",
       "default": []
+    },
+    "floating": {
+      "type": "object",
+      "default": {
+        "enabled": true,
+        "translate": {
+          "translateX": 15.8239,
+          "translateY": 1.08383,
+          "duration": 1000,
+          "delay": 0
+        },
+        "rotate": {
+          "rotateX": -21.5199,
+          "rotateY": 9.75444,
+          "rotateZ": -36.4564,
+          "rotateDuration": 1000,
+          "rotateDelay": 0
+        },
+        "scale": {
+          "scaleX": 0.803472,
+          "scaleY": 1.04335
+        }
+      }
     }
   },
   "supports": {
