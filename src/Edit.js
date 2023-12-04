@@ -13,11 +13,11 @@ const Edit = (props) => {
 
   return <>
     <Settings attributes={attributes} setAttributes={setAttributes} />
-
-    <div className={className} id={`bBlocksPath-${clientId}`}>
-      <Style attributes={attributes} clientId={clientId} />
-
-      <Path attributes={attributes} />
+    <div>
+      <div className={className} id={`bBlocksPath-${clientId}`}>
+        <Style attributes={attributes} clientId={clientId} />
+        <Path attributes={attributes} />
+      </div>
     </div>
   </>;
 };
