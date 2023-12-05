@@ -1,31 +1,32 @@
 .bBlocksPath {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    svg {
-        border-radius: 10px;
-        overflow: visible;
-        transform: rotate(0deg);
-        // display: none;
-    }
+  .b-text-path {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
 
-    path {
-        stroke-width: 2; // Adjust the stroke width as needed
-    }
+      svg {
+          width: 60%;
+          overflow: visible;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column; /* Ensure child elements are aligned vertically */
 
-    text {
-        font-size: 24px; // Adjust the font size as needed
-        // fill: rgb(7, 214, 0); // Adjust the text color as needed
-    }
+          #MyPath {
+              /* Your existing styles for the path */
 
-    .pathPrefix {
-        font-size: 18px; // Adjust the font size as needed
-        margin-right: 5px; // Adjust the margin as needed
-    }
-
-    .paths {
-        // Add styles for paths if needed
-    }
+              text {
+                  textPath {
+                      /* Your existing styles for textPath */
+                      text-anchor: middle; /* Center the text horizontally */
+                      dominant-baseline: middle; /* Center the text vertically */
+                  }
+              }
+          }
+      }
+  }
 }

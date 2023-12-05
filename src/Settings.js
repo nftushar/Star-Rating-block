@@ -17,12 +17,12 @@ const pathAlignments = [
 ];
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { svgPath, strokeColor, mainText, padding, alignment, textTypo, textColor, textShadow, fillColor, floating } = attributes;
+	const { svgPath, strokeColor, mainText, padding, alignment, textTypo, textColor, textShadow, fillColor, floating, bgColor } = attributes;
 	const { translate, rotate, scale, enabled: floatingEnabled } = floating;
 	const { translateX, translateY, duration, delay } = translate;
 	const { rotateX, rotateY, rotateZ, rotateDuration, rotateDelay } = rotate;
 	const { scaleX, scaleY } = scale;
- 
+
 
 	const updateObj = (attr, key, val, nestKey = false) => {
 		const newObj = produce(attributes[attr], draft => {
@@ -49,11 +49,11 @@ const Settings = ({ attributes, setAttributes }) => {
 				{tab.name === "general" && (
 					<PanelBody
 						className="bPlPanelBody"
-						title={__("Settings", "text-path")}
-					>
+						title={__("Settings", "text-path")} >
 						<TextControl
+							labelPosition="left"
 							className="mt20"
-							label={__("Main Text", "text-path")}
+							label={__("Title Text", "text-path")}
 							value={mainText}
 							onChange={(val) => setAttributes({ mainText: val })}
 						/>
@@ -82,153 +82,7 @@ const Settings = ({ attributes, setAttributes }) => {
 						className="bPlPanelBody"
 						title={__("Content", "text-path")}
 					>
-						<PanelBody
-							className="bPlPanelBody"
-							title={__("Floating", "text-path")}
-							initialOpen={false} >
-							<ToggleControl
-								label={__("Enable", "map-block")}
-								value={floatingEnabled}
-								checked={floatingEnabled}
-								onChange={(val) => updateObj('floating', 'enabled', val)}
-							/>
-							{floatingEnabled && <>
-								<PanelBody
-									initialOpen={false}
-									className="bPlPanelBody mt20"
-									title={__("Translate", "text-path")}>
 
-									<RangeControl
-										label={__("translate-X", "text-path")}
-										value={translateX}
-										onChange={(val) => updateObj('floating', 'translate', val, 'translateX')}
-										// onChange={(val) => setAttributes({ floating: { ...floating, translate: { ...floating.translate, translateY: val } } })}
-										min={0}
-										max={100}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={15.8239}
-									/>
-
-									<RangeControl
-										label={__("translate-Y", "text-path")}
-										value={translateY}
-										onChange={(val) => updateObj('floating', 'translate', val, 'translateY')}
-										min={0}
-										max={100}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={1.08383}
-									/>
-									<RangeControl
-										label={__("duration", "text-path")}
-										value={duration}
-										onChange={(val) => updateObj('floating', 'translate', val, 'duration')}
-										min={0}
-										max={100}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={1000}
-									/>
-									<RangeControl
-										label={__("delay", "text-path")}
-										value={delay}
-										onChange={(val) => updateObj('floating', 'translate', val, 'delay')}
-										min={0}
-										max={10}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={0}
-									/>
-								</PanelBody>
-
-								<PanelBody
-									className="bPlPanelBody"
-									initialOpen={false}
-									title={__("Rotate", "text-path")}
-								>
-									<RangeControl
-										label={__("Rotate-X", "text-path")}
-										value={rotateX}
-										onChange={(val) => updateObj('floating', 'rotate', val, 'rotateX')}
-										min={0}
-										max={180}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={-21.5199}
-									/>
-									<RangeControl
-										label={__("Rotate-Y", "text-path")}
-										value={rotateY}
-										onChange={(val) => updateObj('floating', 'rotate', val, 'rotateY')}
-										min={0}
-										max={180}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={9.75444}
-									/>
-									<RangeControl
-										label={__("Rotate-Z", "text-path")}
-										value={rotateZ}
-										onChange={(val) => updateObj('floating', 'rotate', val, 'rotateZ')}
-										min={0}
-										max={180}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={-36.4564}
-									/>
-									<RangeControl
-										label={__("duration", "text-path")}
-										value={rotateDuration}
-										onChange={(val) => updateObj('floating', 'rotate', val, 'rotateDuration')}
-										min={0}
-										max={10000}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={1000}
-									/>
-									<RangeControl
-										label={__("delay", "text-path")}
-										value={rotateDelay}
-										onChange={(val) => updateObj('floating', 'rotate', val, 'rotateDelay')}
-										min={0}
-										max={5000}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={0}
-									/>
-								</PanelBody>
-
-								<PanelBody
-									className="bPlPanelBody"
-									initialOpen={false}
-									title={__("Scale", "text-path")}
-								>
-									<RangeControl
-										label={__("scale-X", "text-path")}
-										value={scaleX}
-										onChange={(val) => updateObj('floating', 'scale', val, 'scaleX')}
-										min={0}
-										max={5}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={0.803472}
-									/>
-									<RangeControl
-										label={__("scale-Y", "text-path")}
-										value={scaleY}
-										onChange={(val) => updateObj('floating', 'scale', val, 'scaleY')}
-										min={0}
-										max={5}
-										step={1}
-										allowReset={true}
-										resetFallbackValue={1.04335}
-									/>
-								</PanelBody>
-							</>}
-
-
-						</PanelBody>
 
 						<BtnGroup
 							className="mt20"
@@ -251,13 +105,159 @@ const Settings = ({ attributes, setAttributes }) => {
 								onChange={(value) => setAttributes({ padding: value })}
 							/>
 						</PanelRow>
-
 					</PanelBody>
+					<PanelBody
+						className="bPlPanelBody"
+						title={__("Floating", "text-path")}
+						initialOpen={false} >
+						<ToggleControl
+							label={__("Enable", "map-block")}
+							value={floatingEnabled}
+							checked={floatingEnabled}
+							onChange={(val) => updateObj('floating', 'enabled', val)}
+						/>
+						{floatingEnabled && <>
+							<PanelBody
+								initialOpen={false}
+								className="bPlPanelBody mt20"
+								title={__("Translate", "text-path")}>
+
+								<RangeControl
+									label={__("translate-X", "text-path")}
+									value={translateX}
+									onChange={(val) => updateObj('floating', 'translate', val, 'translateX')}
+									// onChange={(val) => setAttributes({ floating: { ...floating, translate: { ...floating.translate, translateY: val } } })}
+									min={0}
+									max={100}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={15.8239}
+								/>
+
+								<RangeControl
+									label={__("translate-Y", "text-path")}
+									value={translateY}
+									onChange={(val) => updateObj('floating', 'translate', val, 'translateY')}
+									min={0}
+									max={100}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={1.08383}
+								/>
+								<RangeControl
+									label={__("duration", "text-path")}
+									value={duration}
+									onChange={(val) => updateObj('floating', 'translate', val, 'duration')}
+									min={0}
+									max={100}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={1000}
+								/>
+								<RangeControl
+									label={__("delay", "text-path")}
+									value={delay}
+									onChange={(val) => updateObj('floating', 'translate', val, 'delay')}
+									min={0}
+									max={10}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={0}
+								/>
+							</PanelBody>
+
+							<PanelBody
+								className="bPlPanelBody"
+								initialOpen={false}
+								title={__("Rotate", "text-path")}
+							>
+								<RangeControl
+									label={__("Rotate-X", "text-path")}
+									value={rotateX}
+									onChange={(val) => updateObj('floating', 'rotate', val, 'rotateX')}
+									min={0}
+									max={180}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={-21.5199}
+								/>
+								<RangeControl
+									label={__("Rotate-Y", "text-path")}
+									value={rotateY}
+									onChange={(val) => updateObj('floating', 'rotate', val, 'rotateY')}
+									min={0}
+									max={180}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={9.75444}
+								/>
+								<RangeControl
+									label={__("Rotate-Z", "text-path")}
+									value={rotateZ}
+									onChange={(val) => updateObj('floating', 'rotate', val, 'rotateZ')}
+									min={0}
+									max={180}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={-36.4564}
+								/>
+								<RangeControl
+									label={__("duration", "text-path")}
+									value={rotateDuration}
+									onChange={(val) => updateObj('floating', 'rotate', val, 'rotateDuration')}
+									min={0}
+									max={10000}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={1000}
+								/>
+								<RangeControl
+									label={__("delay", "text-path")}
+									value={rotateDelay}
+									onChange={(val) => updateObj('floating', 'rotate', val, 'rotateDelay')}
+									min={0}
+									max={5000}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={0}
+								/>
+							</PanelBody>
+
+							<PanelBody
+								className="bPlPanelBody"
+								initialOpen={false}
+								title={__("Scale", "text-path")}
+							>
+								<RangeControl
+									label={__("scale-X", "text-path")}
+									value={scaleX}
+									onChange={(val) => updateObj('floating', 'scale', val, 'scaleX')}
+									min={0}
+									max={5}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={0.803472}
+								/>
+								<RangeControl
+									label={__("scale-Y", "text-path")}
+									value={scaleY}
+									onChange={(val) => updateObj('floating', 'scale', val, 'scaleY')}
+									min={0}
+									max={5}
+									step={1}
+									allowReset={true}
+									resetFallbackValue={1.04335}
+								/>
+							</PanelBody>
+						</>}
+					</PanelBody>
+
 					<PanelBody
 						className="bPlPanelBody"
 						title={__("SVG", "text-path")}
 						initialOpen={false}
 					>
+						<BColor label={__('Background Color', 'text-path')} value={bgColor} onChange={val => setAttributes({ bgColor: val })} defaultColor='#0000' />
 						<BColor label={__('Stroke Color', 'text-path')} value={strokeColor} onChange={val => setAttributes({ strokeColor: val })} defaultColor='#0000' />
 
 						<BColor label={__('fill Color', 'text-path')} value={fillColor} onChange={val => setAttributes({ fillColor: val })} defaultColor='#ffff' />

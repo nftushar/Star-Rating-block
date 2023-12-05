@@ -81,7 +81,7 @@ msgstr ""
 
 #: inc/block.json
 msgctxt "block description"
-msgid "Gutenberg editing with easy-to-use, responsive text-path  more."
+msgid "easy-to-use, responsive text-path and more.",
 msgstr ""
 
 #: inc/block.json

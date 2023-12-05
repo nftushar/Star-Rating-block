@@ -2,7 +2,7 @@
   "apiVersion": "1",
   "name": "b-blocks/text-path",
   "title": "Text Path",
-  "description": "Gutenberg editing with easy-to-use, responsive text-path  more.",
+  "description": "easy-to-use, responsive text-path and more.",
   "category": "media",
   "keywords": [
     "text-path",
@@ -50,6 +50,10 @@
         "fontSize": "16px"
       }
     },
+    "bgColor": {
+      "type": "string",
+      "default": "#1BE77E"
+    },
     "strokeColor": {
       "type": "string",
       "default": "red"
@@ -60,7 +64,7 @@
     },
     "textColor": {
       "type": "string",
-      "default": "#31304D"
+      "default": "#cabc2f"
     },
     "textShadow": {
       "type": "array",

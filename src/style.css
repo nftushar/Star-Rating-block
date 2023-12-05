@@ -1,0 +1,27 @@
+.bBlocksPath {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bBlocksPath .e-text-path {
+  display: flex;
+  justify-content: center;
+}
+.bBlocksPath .e-text-path svg {
+  width: 60%;
+  height: 60vh;
+  overflow: visible;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* Ensure child elements are aligned vertically */
+}
+.bBlocksPath .e-text-path svg #path {
+  /* Your existing styles */
+}
+.bBlocksPath .e-text-path svg #path text textPath {
+  /* Your existing styles */
+}
+.bBlocksPath .e-text-path svg #path .pathPrefix {
+  /* Your existing styles */
+}/*# sourceMappingURL=style.css.map */
